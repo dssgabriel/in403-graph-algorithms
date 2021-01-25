@@ -1,0 +1,852 @@
+# stations et liens du métro parisien
+# format : V num_sommet ligne_sommet station/terminus nom_sommet
+#          E num_sommet1 num_sommet2 temps_en_secondes
+V 0000 12 0 Abbesses
+V 0001 02 0 Alexandre Dumas
+V 0002 09 0 Alma Marceau
+V 0003 04 0 Alésia
+V 0004 03 0 Anatole France
+V 0005 02 0 Anvers
+V 0006 01 0 Argentine
+V 0007 11 0 Arts et Métiers
+V 0008 03 0 Arts et Métiers
+V 0009 12 0 Assemblée Nationale
+V 0010 07 0 Aubervilliers-Pantin, Quatre Chemins
+V 0011 10 0 Avenue Émile Zola
+V 0012 02 0 Avron
+V 0013 02 0 Barbès Rochechouart
+V 0014 04 0 Barbès Rochechouart
+V 0015 13 0 Basilique de Saint-Denis
+V 0016 01 0 Bastille
+V 0017 05 0 Bastille
+V 0018 08 0 Bastille
+V 0019 06 0 Bel Air
+V 0020 11 0 Belleville
+V 0021 02 0 Belleville
+V 0022 14 0 Bercy
+V 0023 06 0 Bercy
+V 0024 14 1 Bibliothèque François Mitterand
+V 0025 09 0 Billancourt
+V 0026 06 0 Bir-Hakeim
+V 0027 02 0 Blanche
+V 0028 05 1 Bobigny, Pablo Picasso
+V 0029 05 0 Bobigny-Pantin, Raymond Queneau
+V 0030 06 0 Boissière
+V 0031 7B 0 Bolivar
+V 0032 08 0 Bonne Nouvelle 
+V 0033 09 0 Bonne Nouvelle
+V 0034 7B 0 Botzaris
+V 0035 08 0 Boucicaut
+V 0036 10 0 Boulogne, Jean Jaurès
+V 0037 10 1 Boulogne, Pont de Saint-Cloud, Rond Point Rhin et Danube
+V 0038 03 0 Bourse 
+V 0039 13 0 Brochant
+V 0040 05 0 Bréguet-Sabin
+V 0041 7B 0 Buttes Chaumont
+V 0042 09 0 Buzenval
+V 0043 01 0 Bérault
+V 0044 07 0 Cadet
+V 0045 06 0 Cambronne
+V 0046 05 0 Campo-Formio
+V 0047 10 0 Cardinal Lemoine
+V 0048 13 0 Carrefour Pleyel
+V 0049 07 0 Censier Daubenton
+V 0050 01 0 Champs Elysées, Clémenceau
+V 0051 13 0 Champs Elysées, Clémenceau
+V 0052 10 0 Chardon Lagâche
+V 0053 08 0 Charenton-Ecoles
+V 0054 10 0 Charles Michels
+V 0055 01 0 Charles de Gaulle, Etoile
+V 0056 02 0 Charles de Gaulle, Etoile
+V 0057 06 1 Charles de Gaulle, Etoile 
+V 0058 09 0 Charonne
+V 0059 07 0 Chaussée d'Antin, La Fayette
+V 0060 09 0 Chaussée d'Antin, La Fayette
+V 0061 08 0 Chemin Vert
+V 0062 06 0 Chevaleret
+V 0063 07 0 Château Landon
+V 0064 04 0 Château Rouge
+V 0065 04 0 Château d'Eau
+V 0066 01 1 Château de Vincennes
+V 0067 01 0 Châtelet
+V 0068 11 1 Châtelet
+V 0069 14 0 Châtelet
+V 0070 04 0 Châtelet
+V 0071 07 0 Châtelet
+V 0072 13 1 Châtillon-Montrouge
+V 0073 04 0 Cité
+V 0074 10 0 Cluny, La Sorbonne
+V 0075 02 0 Colonel Fabien
+V 0076 08 0 Commerce
+V 0077 01 0 Concorde
+V 0078 12 0 Concorde
+V 0079 08 0 Concorde
+V 0080 12 0 Convention
+V 0081 12 0 Corentin Celton
+V 0082 07 0 Corentin-Cariou
+V 0083 06 0 Corvisart
+V 0084 14 0 Cour Saint-Emilion
+V 0085 02 0 Courcelles
+V 0086 02 0 Couronnes
+V 0087 07 0 Crimée
+V 0088 09 0 Croix de Chavaux
+V 0089 08 1 Créteil-Préfecture
+V 0090 08 0 Créteil-Université
+V 0091 08 0 Créteil-l'Echat, Hôpital Henri Mondor
+V 0092 7B 0 Danube
+V 0093 06 0 Daumesnil
+V 0094 08 0 Daumesnil
+V 0095 04 0 Denfert Rochereau
+V 0096 06 0 Denfert Rochereau
+V 0097 06 0 Dugommier
+V 0098 06 0 Dupleix
+V 0099 10 0 Duroc
+V 0100 13 0 Duroc
+V 0101 06 0 Edgar Quinet
+V 0102 01 0 Esplanade de la Défense
+V 0103 03 0 Europe 
+V 0104 09 0 Exelmans
+V 0105 08 0 Faidherbe-Chaligny
+V 0106 12 0 Falguière
+V 0107 08 0 Filles du Calvaire
+V 0108 07 0 Fort d'Aubervilliers
+V 0109 01 0 Franklin D. Roosevelt
+V 0110 09 0 Franklin D. Roosevelt
+V 0111 08 0 Félix Faure
+V 0112 13 1 Gabriel Péri, Asnières-Gennevilliers
+V 0113 13 0 Gaité
+V 0114 03 1 Galliéni
+V 0115 03 0 Gambetta
+V 0116 3B 1 Gambetta
+V 0117 10 1 Gare d'Austerlitz
+V 0118 05 0 Gare d'Austerlitz
+V 0119 01 0 Gare de Lyon
+V 0120 14 0 Gare de Lyon
+V 0121 04 0 Gare de l'Est
+V 0122 05 0 Gare de l'Est
+V 0123 07 0 Gare de l'Est
+V 0124 04 0 Gare du Nord
+V 0125 05 0 Gare du Nord
+V 0126 13 0 Garibaldi
+V 0127 01 0 George V
+V 0128 06 0 Glacière
+V 0129 11 0 Goncourt
+V 0130 01 1 Grande Arche de la Défense
+V 0131 13 0 Guy Môquet
+V 0132 03 0 Havre Caumartin
+V 0133 09 0 Havre Caumartin
+V 0134 05 0 Hoche
+V 0135 01 0 Hôtel de Ville
+V 0136 11 0 Hôtel de Ville
+V 0137 13 0 Invalides
+V 0138 08 0 Invalides
+V 0139 09 0 Iéna
+V 0140 05 0 Jacques Bonsergent
+V 0141 09 0 Jasmin
+V 0142 02 0 Jaurès
+V 0143 05 0 Jaurès
+V 0144 7B 0 Jaurès
+V 0145 10 0 Javel
+V 0146 11 0 Jourdain
+V 0147 12 0 Jules Joffrin
+V 0148 10 0 Jussieu
+V 0149 07 0 Jussieu
+V 0150 06 0 Kléber
+V 0151 02 0 La Chapelle
+V 0152 07 1 La Courneuve, 8 Mai 1945
+V 0153 13 0 La Fourche
+V 0154 10 0 La Motte Picquet, Grenelle
+V 0155 06 0 La Motte Picquet, Grenelle
+V 0156 08 0 La Motte Picquet, Grenelle
+V 0157 09 0 La Muette
+V 0158 08 0 La Tour-Maubourg
+V 0159 12 0 Lamarck Caulaincourt
+V 0160 05 0 Laumière
+V 0161 07 0 Le Kremlin-Bicêtre
+V 0162 07 0 Le Peletier
+V 0163 08 0 Ledru Rollin
+V 0164 07 0 Les Gobelins
+V 0165 04 0 Les Halles
+V 0166 01 0 Les Sablons
+V 0167 08 0 Liberté
+V 0168 13 0 Liège
+V 0169 07 0 Louis Blanc
+V 0170 7B 1 Louis Blanc
+V 0171 03 0 Louise Michel
+V 0172 08 0 Lourmel
+V 0173 01 0 Louvre, Rivoli
+V 0174 10 0 Mabillon
+V 0175 12 0 Madeleine
+V 0176 14 1 Madeleine
+V 0177 08 0 Madeleine
+V 0178 12 1 Mairie d'Issy
+V 0179 07 1 Mairie d'Ivry
+V 0180 13 0 Mairie de Clichy
+V 0181 09 1 Mairie de Montreuil
+V 0182 13 0 Mairie de Saint-Ouen
+V 0183 11 1 Mairie des Lilas
+V 0184 07 0 Maison Blanche
+V 0185 08 0 Maisons-Alfort les Juilliottes
+V 0186 08 0 Maisons-Alfort, Stade
+V 0187 13 0 Malakoff-Plateau de Vanves
+V 0188 13 0 Malakoff-Rue Étienne Dolet
+V 0189 03 0 Malesherbes
+V 0190 09 0 Maraîchers
+V 0191 12 0 Marcadet Poissonniers
+V 0192 04 0 Marcadet Poissonniers
+V 0193 09 0 Marcel Sembat
+V 0194 12 0 Marx Dormoy
+V 0195 10 0 Maubert Mutualité
+V 0196 10 0 Michel Ange Auteuil
+V 0197 09 0 Michel Ange Auteuil
+V 0198 10 0 Michel Ange Molitor
+V 0199 09 0 Michel Ange Molitor
+V 0200 08 0 Michel Bizot 
+V 0201 10 0 Mirabeau
+V 0202 13 0 Miromesnil
+V 0203 09 0 Miromesnil
+V 0204 02 0 Monceau
+V 0205 08 0 Montgallet
+V 0206 12 0 Montparnasse Bienvenue
+V 0207 13 0 Montparnasse Bienvenue
+V 0208 04 0 Montparnasse Bienvenue
+V 0209 06 0 Montparnasse Bienvenue
+V 0210 04 0 Mouton-Duvernet
+V 0211 02 0 Ménilmontant
+V 0212 01 0 Nation 
+V 0213 02 1 Nation
+V 0214 06 1 Nation
+V 0215 09 0 Nation
+V 0216 06 0 Nationale
+V 0217 12 0 Notre Dame de Lorette
+V 0218 12 0 Notre-Dame-des-Champs
+V 0219 05 0 Oberkampf
+V 0220 09 0 Oberkampf
+V 0221 10 0 Odéon
+V 0222 04 0 Odéon
+V 0223 03 0 Opéra
+V 0224 07 0 Opéra
+V 0225 08 0 Opéra
+V 0226 05 0 Ourcq
+V 0227 01 0 Palais Royal, Musée du Louvre
+V 0228 07 0 Palais Royal, Musée du Louvre
+V 0229 03 0 Parmentier
+V 0230 06 0 Passy
+V 0231 12 0 Pasteur
+V 0232 06 0 Pasteur
+V 0233 3B 0 Pelleport
+V 0234 13 0 Pernety
+V 0235 02 0 Philippe-Auguste
+V 0236 06 0 Picpus
+V 0237 07 0 Pierre Curie
+V 0238 12 0 Pigalle
+V 0239 02 0 Pigalle
+V 0240 08 1 Place Balard
+V 0241 07 0 Place Monge
+V 0242 05 1 Place d'Italie
+V 0243 06 0 Place d'Italie
+V 0244 07 0 Place d'Italie
+V 0245 13 0 Place de Clichy
+V 0246 02 0 Place de Clichy
+V 0247 11 0 Place des Fêtes
+V 0248 7B 0 Place des Fêtes
+V 0249 13 0 Plaisance
+V 0250 07 0 Poissonnière
+V 0251 03 1 Pont de Levallois, Bécon
+V 0252 01 0 Pont de Neuilly
+V 0253 09 1 Pont de Sèvres
+V 0254 07 0 Pont-Marie
+V 0255 07 0 Pont-Neuf
+V 0256 02 1 Porte Dauphine
+V 0257 08 0 Porte Dorée
+V 0258 01 0 Porte Maillot 
+V 0259 10 0 Porte d'Auteuil
+V 0260 07 0 Porte d'Italie
+V 0261 07 0 Porte d'Ivry
+V 0262 04 1 Porte d'Orléans
+V 0263 03 0 Porte de Bagnolet
+V 0264 03 0 Porte de Champerret
+V 0265 08 0 Porte de Charenton
+V 0266 07 0 Porte de Choisy
+V 0267 13 0 Porte de Clichy
+V 0268 04 1 Porte de Clignancourt
+V 0269 09 0 Porte de Montreuil
+V 0270 05 0 Porte de Pantin 
+V 0271 09 0 Porte de Saint-Cloud
+V 0272 13 0 Porte de Saint-Ouen
+V 0273 13 0 Porte de Vanves
+V 0274 12 0 Porte de Versailles
+V 0275 01 0 Porte de Vincennes
+V 0276 12 1 Porte de la Chapelle
+V 0277 07 0 Porte de la Villette
+V 0278 11 0 Porte des Lilas
+V 0279 3B 1 Porte des Lilas
+V 0280 7B 1 Pré-Saint-Gervais
+V 0281 14 0 Pyramides 
+V 0282 07 0 Pyramides
+V 0283 11 0 Pyrénées
+V 0284 02 0 Père Lachaise
+V 0285 03 0 Père Lachaise
+V 0286 03 0 Péreire
+V 0287 06 0 Quai de la Gare 
+V 0288 05 0 Quai de la Rapée
+V 0289 03 0 Quatre Septembre
+V 0290 11 0 Rambuteau
+V 0291 09 0 Ranelagh
+V 0292 04 0 Raspail
+V 0293 06 0 Raspail
+V 0294 12 0 Rennes
+V 0295 01 0 Reuilly Diderot
+V 0296 08 0 Reuilly Diderot
+V 0297 05 0 Richard Lenoir
+V 0298 08 0 Richelieu Drouot
+V 0299 09 0 Richelieu Drouot
+V 0300 07 0 Riquet
+V 0301 09 0 Robespierre
+V 0302 02 0 Rome
+V 0303 08 0 Rue Montmartre, Grands Boulevards
+V 0304 09 0 Rue Montmartre, Grands Boulevards
+V 0305 03 0 Rue Saint-Maur
+V 0306 09 0 Rue de la Pompe
+V 0307 09 0 Rue des Boulets
+V 0308 12 0 Rue du Bac
+V 0309 03 0 Réaumur Sébastopol
+V 0310 04 0 Réaumur Sébastopol
+V 0311 11 0 République
+V 0312 03 0 République
+V 0313 05 0 République
+V 0314 08 0 République
+V 0315 09 0 République
+V 0316 09 0 Saint-Ambroise
+V 0317 09 0 Saint-Augustin
+V 0318 13 0 Saint-Denis-Porte de Paris
+V 0319 13 1 Saint-Denis-Université
+V 0320 3B 0 Saint-Fargeau
+V 0321 13 0 Saint-Francois Xavier
+V 0322 12 0 Saint-Georges
+V 0323 04 0 Saint-Germain-des-Prés
+V 0324 06 0 Saint-Jacques
+V 0325 12 0 Saint-Lazare
+V 0326 13 0 Saint-Lazare
+V 0327 03 0 Saint-Lazare
+V 0328 01 0 Saint-Mandé, Tourelle
+V 0329 05 0 Saint-Marcel
+V 0330 04 0 Saint-Michel
+V 0331 01 0 Saint-Paul, Le Marais
+V 0332 09 0 Saint-Philippe du Roule
+V 0333 04 0 Saint-Placide
+V 0334 04 0 Saint-Sulpice
+V 0335 08 0 Saint-Sébastien-Froissart
+V 0336 03 0 Sentier
+V 0337 04 0 Simplon
+V 0338 12 0 Solférino
+V 0339 02 0 Stalingrad
+V 0340 05 0 Stalingrad
+V 0341 07 0 Stalingrad
+V 0342 04 0 Strasbourg Saint-Denis
+V 0343 08 0 Strasbourg Saint-Denis
+V 0344 09 0 Strasbourg Saint-Denis
+V 0345 07 0 Sully Morland
+V 0346 10 0 Sèvres Babylone
+V 0347 12 0 Sèvres Babylone
+V 0348 06 0 Sèvres Lecourbe
+V 0349 10 0 Ségur
+V 0350 03 0 Temple
+V 0351 02 0 Ternes
+V 0352 07 0 Tolbiac
+V 0353 12 0 Trinité d'Estienne d'Orves
+V 0354 06 0 Trocadéro
+V 0355 09 0 Trocadéro
+V 0356 01 0 Tuileries
+V 0357 11 0 Télégraphe
+V 0358 10 0 Vaneau
+V 0359 13 0 Varenne
+V 0360 12 0 Vaugirard
+V 0361 04 0 Vavin 
+V 0362 02 0 Victor Hugo
+V 0363 07 1 Villejuif, Louis Aragon
+V 0364 07 0 Villejuif, Léo Lagrange
+V 0365 07 0 Villejuif, P. Vaillant Couturier
+V 0366 02 0 Villiers
+V 0367 03 0 Villiers
+V 0368 12 0 Volontaires
+V 0369 09 0 Voltaire
+V 0370 03 0 Wagram
+V 0371 08 0 Ecole Militaire
+V 0372 08 0 Ecole Vétérinaire de Maisons-Alfort
+V 0373 10 0 Eglise d'Auteuil
+V 0374 05 0 Eglise de Pantin
+V 0375 04 0 Etienne Marcel
+E 0000 0238 41
+E 0000 0159 46
+E 0001 0012 36
+E 0001 0235 44
+E 0002 0110 69
+E 0002 0139 50
+E 0003 0262 33
+E 0003 0210 41
+E 0004 0171 43
+E 0004 0251 35
+E 0005 0013 67
+E 0005 0239 54
+E 0006 0055 56
+E 0006 0258 46
+E 0007 0290 39
+E 0007 0311 79
+E 0008 0350 38
+E 0008 0309 58
+E 0009 0338 28
+E 0009 0078 62
+E 0010 0277 42
+E 0010 0108 36
+E 0011 0154 32
+E 0011 0054 41
+E 0012 0213 42
+E 0013 0151 57
+E 0014 0124 46
+E 0014 0064 28
+E 0015 0318 37
+E 0015 0319 73
+E 0016 0119 98
+E 0016 0331 62
+E 0017 0288 89
+E 0017 0040 41
+E 0018 0163 32
+E 0018 0061 56
+E 0019 0236 31
+E 0019 0093 33
+E 0020 0129 48
+E 0020 0283 38
+E 0021 0086 46
+E 0021 0075 51
+E 0022 0084 39
+E 0022 0120 81
+E 0023 0097 35
+E 0023 0287 57
+E 0024 0084 51
+E 0025 0193 42
+E 0025 0253 35
+E 0026 0098 31
+E 0026 0230 64
+E 0027 0239 64
+E 0027 0246 59
+E 0028 0029 79
+E 0029 0374 46
+E 0030 0354 24
+E 0030 0150 44
+E 0031 0041 28
+E 0031 0144 36
+E 0032 0343 54
+E 0032 0303 41
+E 0033 0344 52
+E 0033 0304 41
+E 0034 0248 36
+E 0034 0041 57
+E 0035 0111 34
+E 0035 0172 40
+E 0036 0198 105
+E 0036 0037 39
+E 0038 0336 35
+E 0038 0289 38
+E 0039 0153 38
+E 0039 0267 46
+E 0040 0297 37
+E 0042 0190 42
+E 0042 0215 35
+E 0043 0066 41
+E 0043 0328 57
+E 0044 0162 54
+E 0044 0250 64
+E 0045 0348 43
+E 0045 0155 35
+E 0046 0242 63
+E 0046 0329 46
+E 0047 0148 46
+E 0047 0195 41
+E 0048 0182 66
+E 0048 0318 60
+E 0049 0164 42
+E 0049 0241 40
+E 0050 0077 54
+E 0050 0109 62
+E 0051 0137 62
+E 0051 0202 69
+E 0052 0201 20
+E 0053 0372 47
+E 0053 0167 33
+E 0054 0145 51
+E 0055 0127 60
+E 0056 0351 59
+E 0056 0362 75
+E 0057 0150 35
+E 0058 0307 31
+E 0058 0369 31
+E 0059 0224 72
+E 0059 0162 53
+E 0060 0299 63
+E 0060 0133 45
+E 0061 0335 28
+E 0062 0287 53
+E 0062 0216 48
+E 0063 0123 44
+E 0063 0169 57
+E 0064 0192 57
+E 0065 0342 41
+E 0065 0121 57
+E 0067 0135 87
+E 0067 0173 51
+E 0068 0136 85
+E 0069 0120 287
+E 0069 0281 131
+E 0070 0073 45
+E 0070 0165 66
+E 0071 0254 73
+E 0071 0255 37
+E 0072 0188 52
+E 0073 0330 46
+E 0074 0195 44
+E 0074 0221 52
+E 0075 0142 93
+E 0076 0156 59
+E 0076 0111 30
+E 0077 0356 57
+E 0078 0175 41
+E 0079 0177 41
+E 0079 0138 71
+E 0080 0274 41
+E 0080 0360 49
+E 0081 0178 43
+E 0081 0274 43
+E 0082 0087 32
+E 0082 0277 47
+E 0083 0243 36
+E 0083 0128 49
+E 0085 0204 47
+E 0085 0351 46
+E 0086 0211 37
+E 0087 0300 43
+E 0088 0181 44
+E 0088 0301 47
+E 0089 0090 29
+E 0090 0091 26
+E 0091 0185 27
+E 0092 0034 37
+E 0093 0097 45
+E 0094 0200 27
+E 0094 0205 39
+E 0095 0210 48
+E 0095 0292 37
+E 0096 0324 52
+E 0096 0293 42
+E 0098 0155 69
+E 0099 0358 31
+E 0099 0349 54
+E 0100 0207 113
+E 0100 0321 59
+E 0101 0293 43
+E 0101 0209 36
+E 0102 0252 35
+E 0102 0130 37
+E 0103 0327 44
+E 0103 0367 30
+E 0104 0199 62
+E 0104 0271 40
+E 0105 0296 42
+E 0105 0163 47
+E 0106 0231 29
+E 0106 0206 36
+E 0107 0335 49
+E 0107 0314 49
+E 0108 0152 29
+E 0109 0127 59
+E 0110 0332 37
+E 0112 0180 71
+E 0113 0234 36
+E 0113 0207 47
+E 0114 0263 72
+E 0115 0263 39
+E 0115 0285 70
+E 0116 0233 50
+E 0117 0148 59
+E 0118 0329 60
+E 0118 0288 30
+E 0119 0295 41
+E 0121 0124 67
+E 0122 0140 103
+E 0122 0125 59
+E 0123 0250 51
+E 0125 0340 107
+E 0126 0272 37
+E 0126 0182 42
+E 0128 0324 42
+E 0129 0311 49
+E 0131 0153 72
+E 0131 0272 63
+E 0132 0223 68
+E 0132 0327 40
+E 0133 0317 49
+E 0134 0270 47
+E 0134 0374 53
+E 0135 0331 65
+E 0136 0290 73
+E 0137 0359 54
+E 0138 0158 57
+E 0139 0355 46
+E 0140 0313 47
+E 0141 0291 37
+E 0141 0197 49
+E 0142 0339 27
+E 0143 0340 29
+E 0143 0160 44
+E 0144 0170 46
+E 0145 0373 55
+E 0146 0283 33
+E 0146 0247 50
+E 0147 0159 44
+E 0147 0191 49
+E 0149 0241 57
+E 0149 0345 79
+E 0151 0339 93
+E 0153 0245 64
+E 0154 0349 33
+E 0156 0371 46
+E 0157 0306 36
+E 0157 0291 49
+E 0158 0371 66
+E 0160 0226 40
+E 0161 0364 28
+E 0161 0184 39
+E 0164 0244 60
+E 0165 0375 33
+E 0166 0258 38
+E 0166 0252 37
+E 0167 0265 31
+E 0168 0326 49
+E 0168 0245 28
+E 0169 0341 54
+E 0171 0264 49
+E 0172 0240 35
+E 0173 0227 34
+E 0174 0221 31
+E 0174 0346 72
+E 0175 0325 144
+E 0176 0281 71
+E 0177 0225 88
+E 0179 0237 37
+E 0180 0267 91
+E 0183 0278 51
+E 0184 0260 31
+E 0184 0352 36
+E 0185 0186 26
+E 0186 0372 33
+E 0187 0188 34
+E 0187 0273 46
+E 0189 0367 49
+E 0189 0370 35
+E 0190 0269 27
+E 0191 0194 67
+E 0192 0337 36
+E 0193 0271 38
+E 0194 0276 67
+E 0196 0259 47
+E 0197 0199 28
+E 0198 0052 42
+E 0200 0257 51
+E 0201 0145 46
+E 0202 0326 112
+E 0203 0317 53
+E 0203 0332 40
+E 0204 0366 51
+E 0205 0296 38
+E 0206 0218 45
+E 0208 0361 42
+E 0208 0333 48
+E 0209 0232 54
+E 0211 0284 49
+E 0212 0275 86
+E 0212 0295 64
+E 0214 0236 42
+E 0215 0307 60
+E 0216 0243 55
+E 0217 0353 29
+E 0217 0322 37
+E 0218 0294 38
+E 0219 0297 50
+E 0219 0313 81
+E 0220 0316 35
+E 0220 0315 80
+E 0222 0323 42
+E 0222 0330 31
+E 0223 0289 43
+E 0224 0282 80
+E 0225 0298 75
+E 0226 0270 39
+E 0227 0356 38
+E 0228 0255 53
+E 0228 0282 49
+E 0229 0305 43
+E 0229 0312 64
+E 0230 0354 62
+E 0231 0368 40
+E 0232 0348 46
+E 0233 0320 33
+E 0234 0249 38
+E 0235 0284 44
+E 0237 0261 37
+E 0238 0322 27
+E 0244 0352 37
+E 0246 0302 37
+E 0247 0357 23
+E 0248 0280 57
+E 0249 0273 35
+E 0254 0345 75
+E 0256 0362 37
+E 0257 0265 26
+E 0259 0198 47
+E 0259 0036 84
+E 0260 0266 37
+E 0261 0266 46
+E 0264 0286 41
+E 0268 0337 39
+E 0269 0301 35
+E 0275 0328 41
+E 0278 0357 59
+E 0279 0320 37
+E 0280 0092 43
+E 0285 0305 61
+E 0286 0370 35
+E 0292 0361 38
+E 0294 0347 46
+E 0298 0303 46
+E 0299 0304 48
+E 0300 0341 46
+E 0302 0366 53
+E 0306 0355 33
+E 0308 0347 29
+E 0308 0338 33
+E 0309 0336 65
+E 0310 0375 28
+E 0310 0342 67
+E 0312 0350 37
+E 0314 0343 98
+E 0315 0344 107
+E 0316 0369 27
+E 0321 0359 23
+E 0323 0334 47
+E 0325 0353 69
+E 0333 0334 32
+E 0346 0358 33
+E 0360 0368 47
+E 0363 0365 28
+E 0364 0365 28
+E 0373 0196 37
+E 0007 0008 180
+E 0013 0014 180
+E 0016 0018 240
+E 0016 0017 240
+E 0017 0018 240
+E 0020 0021 180
+E 0022 0023 180
+E 0032 0033 180
+E 0050 0051 180
+E 0055 0057 240
+E 0055 0056 240
+E 0056 0057 240
+E 0059 0060 180
+E 0067 0069 300
+E 0067 0068 300
+E 0067 0070 300
+E 0067 0071 300
+E 0068 0069 300
+E 0068 0070 300
+E 0068 0071 300
+E 0069 0070 300
+E 0069 0071 300
+E 0070 0071 300
+E 0077 0079 240
+E 0077 0078 240
+E 0078 0079 240
+E 0093 0094 180
+E 0095 0096 180
+E 0099 0100 180
+E 0109 0110 180
+E 0115 0116 180
+E 0117 0118 180
+E 0119 0120 180
+E 0121 0123 240
+E 0121 0122 240
+E 0122 0123 240
+E 0124 0125 180
+E 0132 0133 180
+E 0135 0136 180
+E 0137 0138 180
+E 0142 0144 240
+E 0142 0143 240
+E 0143 0144 240
+E 0148 0149 180
+E 0154 0156 240
+E 0154 0155 240
+E 0155 0156 240
+E 0169 0170 180
+E 0175 0177 240
+E 0175 0176 240
+E 0176 0177 240
+E 0191 0192 180
+E 0196 0197 180
+E 0198 0199 180
+E 0202 0203 180
+E 0206 0208 300
+E 0206 0207 300
+E 0206 0209 300
+E 0207 0208 300
+E 0207 0209 300
+E 0208 0209 300
+E 0212 0214 300
+E 0212 0213 300
+E 0212 0215 300
+E 0213 0214 300
+E 0213 0215 300
+E 0214 0215 300
+E 0219 0220 180
+E 0221 0222 180
+E 0223 0225 240
+E 0223 0224 240
+E 0224 0225 240
+E 0227 0228 180
+E 0231 0232 180
+E 0238 0239 180
+E 0242 0244 240
+E 0242 0243 240
+E 0243 0244 240
+E 0245 0246 180
+E 0247 0248 180
+E 0278 0279 180
+E 0281 0282 180
+E 0284 0285 180
+E 0292 0293 180
+E 0295 0296 180
+E 0298 0299 180
+E 0303 0304 180
+E 0309 0310 180
+E 0311 0313 300
+E 0311 0312 300
+E 0311 0314 300
+E 0311 0315 300
+E 0312 0313 300
+E 0312 0314 300
+E 0312 0315 300
+E 0313 0314 300
+E 0313 0315 300
+E 0314 0315 300
+E 0325 0327 240
+E 0325 0326 240
+E 0326 0327 240
+E 0339 0341 240
+E 0339 0340 240
+E 0340 0341 240
+E 0342 0344 240
+E 0342 0343 240
+E 0343 0344 240
+E 0346 0347 180
+E 0354 0355 180
+E 0366 0367 180

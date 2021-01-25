@@ -1,0 +1,14 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Exercice 1}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Parcours en pronfondeur}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Parcours en largeur}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Centre du graphe}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Diam\IeC {\`e}tre du graphe}{3}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Cycle hamiltonien}{3}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Algorithme de Dijkstra}{4}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Arborescence des plus courts chemins}{5}{subsection.1.7}
+\contentsline {subsection}{\numberline {1.8}Algorithme de Prim}{5}{subsection.1.8}
+\contentsline {section}{\numberline {2}Exercice 2}{10}{section.2}
+\contentsline {subsection}{\numberline {2.1}Cha\IeC {\^\i }ne eul\IeC {\'e}rienne}{10}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Coloration du graphe (algorithme de Welsh-Powell)}{10}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Nombre chromatique}{11}{subsection.2.3}

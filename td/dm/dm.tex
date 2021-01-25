@@ -1,0 +1,525 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{textcomp}
+\usepackage{soul}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usetikzlibrary{arrows,automata}
+
+\title{Algorithmique des graphes - DM}
+\author{Gabriel Dos Santos}
+\date{14 mai 2020}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Exercice 1}
+\subsection{Parcours en pronfondeur}
+\bigskip
+\begin{tikzpicture}
+\bigskip
+\Tree
+[.1 
+    [.2 
+        [.3 
+            [.4 [.5 [.9 ] ]
+                [.6 [.8 [.7 ] ] ]
+            ]
+        ]
+    ]
+]
+\end{tikzpicture}
+\newpage
+
+\subsection{Parcours en largeur}
+\bigskip
+\begin{tikzpicture}
+\Tree
+[.1 [.2 [.9 ] ] 
+    [.3 [.7 [.8 ] ] ]
+    [.4 [.5 ] [.6 ] ]  
+]
+\end{tikzpicture}
+\bigskip
+
+\subsection{Centre du graphe}
+\bigskip
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+    Sommets & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & Excentricité maximale \\
+\hline
+    1       & 0 & 1 & 1 & 1 & 2 & 2 & 2 & 3 & 2 & 3 \\
+\hline
+    2       & 1 & 0 & 1 & 2 & 2 & 2 & 2 & 3 & 1 & 3 \\
+\hline
+    3       & 1 & 1 & 0 & 1 & 2 & 2 & 1 & 2 & 2 & 2 \\
+\hline
+    4       & 1 & 2 & 1 & 0 & 1 & 1 & 2 & 2 & 2 & 2 \\
+\hline
+    5       & 2 & 2 & 2 & 1 & 0 & 2 & 3 & 3 & 1 & 3 \\
+\hline
+    6       & 2 & 2 & 2 & 1 & 2 & 0 & 2 & 1 & 3 & 3 \\
+\hline
+    7       & 2 & 2 & 1 & 2 & 3 & 2 & 0 & 1 & 3 & 3 \\
+\hline
+    8       & 3 & 3 & 2 & 2 & 3 & 1 & 1 & 0 & 4 & 4 \\
+\hline
+    9       & 2 & 1 & 2 & 2 & 1 & 3 & 3 & 4 & 0 & 4 \\
+\hline
+\end{tabular}
+\smallskip
+\newline
+Les centres de ce graphe sont les sommets 3 et 4.
+\bigskip
+
+\subsection{Diamètre du graphe}
+\bigskip
+Le diamètre d'un graphe est l'excentricité maximale du ou des centres du graphe. Ici, le diamètre du graphe est donc égal à l'excentricité maximale des sommets 3 et 4, soit 2 (d'après le tableau de la question 1.3).
+\bigskip
+
+\subsection{Cycle hamiltonien}
+\bigskip
+Un cycle hamiltonien est un chemin à travers un graphe qui visite chaque sommet exactement une seule fois. Dans ce graphe, on peut déterminer plusieurs cycle hamiltonien.
+\newline
+Par exemple : 
+\newline
+1 \textrightarrow 2 \textrightarrow 9 \textrightarrow 5 \textrightarrow 4 \textrightarrow 6 \textrightarrow 8 \textrightarrow 7 \textrightarrow 1 (pour recommencer le cycle). 
+\newpage
+
+\subsection{Algorithme de Dijkstra}
+\bigskip
+Pour appliquer l'algorithme de Dijkstra à partir du sommet 1, on doit garder en mémoire le père de chaque sommet et sa distance au sommet de départ.
+\newline
+Pour chaque itération, on commence par déterminer tous les sommets qui ont une arrête commune avec le sommet courant. Pour chacun d'eux, on initialise leur père au sommet courant et on leur distance devient la somme du poids de l'arrête et de la distance du sommet au courant au sommet de départ.
+\newline 
+On doit ensuite déterminer le sommet dont la distance est la plus courte par rapport au sommet de départ (coloré en rouge pour chaque itération dans le tableau ci-dessous). Ce sommet est alors considéré comme vu et ne serait plus évalué à chaque itération suivante (cases noires dans le tableau).
+\newline
+Si la distance pour un sommet voisin est plus grande que la somme de la distance du sommet courant et de l'arrête les reliant, alors on met à jour la distance du sommet voisin. Le père de ce dernier devient alors le sommet courant.
+\newline
+Ceci est répété jusque ce que tous les sommets aient été vus. Le tableau ci-dessous résume l'application de l'algorithme de Dijkstra sur le sommet 1.
+\bigskip
+\newline
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+    Sommets & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+\hline
+    Père & $\emptyset$ & 1 & \st{1} 2 & \st{1} 2 & 4 & 4 & 3 & \st{1} 6 & 2 \\
+\hline
+    Init distances & {\color{red}0} & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\
+\hline
+    Dist min à 1 & \cellcolor{black} & \st{$\infty$} {\color{red}2} & \st{$\infty$} 6 & \st{$\infty$} 5 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\
+\hline      
+    Dist min à 1 (2) & \cellcolor{black} & \cellcolor{black} & \st{6} 5 & \st{5} {\color{red}4} & $\infty$ & $\infty$ & $\infty$ & $\infty$ & \st{$\infty$} 9 \\
+\hline      
+    Dist min à 1 (4) & \cellcolor{black} & \cellcolor{black} & {\color{red}5} & \cellcolor{black} & \st{$\infty$} 8 & \st{$\infty$} 8 & $\infty$ & $\infty$ & 9 \\
+\hline      
+    Dist min à 1 (3) & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & 8 & 8 & \st{$\infty$} {\color{red}7} & $\infty$ & 9 \\
+\hline      
+    Dist min à 1 (7) & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & {\color{red}8} & 8 & \cellcolor{black} & \st{$\infty$} 11 & 9 \\
+\hline      
+    Dist min à 1 (5) & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & {\color{red}8} & \cellcolor{black} & 11 & 9 \\
+\hline      
+    Dist min à 1 (6) & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \st{11} 10 & {\color{red}9} \\
+\hline      
+    Dist min à 1 (9) & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & {\color{red}10} & \cellcolor{black} \\
+\hline      
+    Dist min à 1 (8) & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} & \cellcolor{black} \\
+\hline
+\end{tabular}
+\end{center}
+\newpage
+
+\subsection{Arborescence des plus courts chemins}
+\bigskip
+\begin{tikzpicture}
+\bigskip
+\Tree
+[.1 [.2 
+        [.3 [.7 ] ]
+        [.4 [.5 ] 
+            [.6 [.8 ] ]
+        ]
+        [.9 ]
+    ]
+]
+\end{tikzpicture}
+\bigskip
+
+\subsection{Algorithme de Prim}
+\bigskip
+Prenons le sommet 1 comme sommet de départ pour l'algorithme de Prim.
+Pour chaque sommet que l'on regarde, on dessine comme nouvelle branche de l'arbre celle dont le poids est le plus faible. On obtient alors un arbre couvrant de poids minimum dont la construction se fait telle que suit :
+\newline
+\bigskip
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[state] (2) at (-2,2) {2};
+	\node[state] (3) at (2,2) {3};
+	\node[state] (4) at (0,-2.5) {4};
+	\node[state] (5) at (-4,-4) {5};
+	\node[state] (6) at (4,-4) {6};
+	\node[state] (7) at (5,2.5) {7};
+	\node[state] (8) at (8,3) {8};
+	\node[state] (9) at (-7,3) {9};
+	\path (1) edge node {2} (2)
+	          edge node {6} (3)
+	          edge node {5} (4)
+	      (2) edge node {3} (3)
+	          edge[bend right] node {2} (4)
+	          edge node {7} (9)
+	      (3) edge[bend left] node {2} (4)
+	          edge node {2} (7)
+	      (4) edge node {4} (5)
+	          edge node {4} (6)
+	      (5) edge node {1} (9)
+	      (6) edge node {2} (8)
+	      (7) edge node {4} (8)
+	;
+\end{tikzpicture}
+}
+\newpage
+
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[red,state] (2) at (-2,2) {2};
+	\node[state] (3) at (2,2) {3};
+	\node[state] (4) at (0,-2.5) {4};
+	\node[state] (5) at (-4,-4) {5};
+	\node[state] (6) at (4,-4) {6};
+	\node[state] (7) at (5,2.5) {7};
+	\node[state] (8) at (8,3) {8};
+	\node[state] (9) at (-7,3) {9};
+	\path (1) edge[red] node {2} (2)
+	          edge node {6} (3)
+	          edge node {5} (4)
+	      (2) edge node {3} (3)
+	          edge[bend right] node {2} (4)
+	          edge node {7} (9)
+	      (3) edge[bend left] node {2} (4)
+	          edge node {2} (7)
+	      (4) edge node {4} (5)
+	          edge node {4} (6)
+	      (5) edge node {1} (9)
+	      (6) edge node {2} (8)
+	      (7) edge node {4} (8)
+	;
+\end{tikzpicture}
+}
+\vskip 2cm
+
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[red,state] (2) at (-2,2) {2};
+	\node[state] (3) at (2,2) {3};
+	\node[red,state] (4) at (0,-2.5) {4};
+	\node[state] (5) at (-4,-4) {5};
+	\node[state] (6) at (4,-4) {6};
+	\node[state] (7) at (5,2.5) {7};
+	\node[state] (8) at (8,3) {8};
+	\node[state] (9) at (-7,3) {9};
+	\path (1) edge[red] node {2} (2)
+	          edge node {6} (3)
+	      (2) edge node {3} (3)
+	          edge[red,bend right] node {2} (4)
+	          edge node {7} (9)
+	      (3) edge[bend left] node {2} (4)
+	          edge node {2} (7)
+	      (4) edge node {4} (5)
+	          edge node {4} (6)
+	      (5) edge node {1} (9)
+	      (6) edge node {2} (8)
+	      (7) edge node {4} (8)
+	;
+\end{tikzpicture}
+}
+\newpage
+
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[red,state] (2) at (-2,2) {2};
+	\node[red,state] (3) at (2,2) {3};
+	\node[red,state] (4) at (0,-2.5) {4};
+	\node[state] (5) at (-4,-4) {5};
+	\node[state] (6) at (4,-4) {6};
+	\node[state] (7) at (5,2.5) {7};
+	\node[state] (8) at (8,3) {8};
+	\node[state] (9) at (-7,3) {9};
+	\path (1) edge[red] node {2} (2)
+	      (2) edge[red,bend right] node {2} (4)
+	          edge node {7} (9)
+	      (3) edge[red,bend left] node {2} (4)
+	          edge node {2} (7)
+	      (4) edge node {4} (5)
+	          edge node {4} (6)
+	      (5) edge node {1} (9)
+	      (6) edge node {2} (8)
+	      (7) edge node {4} (8)
+	;
+\end{tikzpicture}
+}
+\vskip 2cm
+
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[red,state] (2) at (-2,2) {2};
+	\node[red,state] (3) at (2,2) {3};
+	\node[red,state] (4) at (0,-2.5) {4};
+	\node[state] (5) at (-4,-4) {5};
+	\node[state] (6) at (4,-4) {6};
+	\node[red,state] (7) at (5,2.5) {7};
+	\node[state] (8) at (8,3) {8};
+	\node[state] (9) at (-7,3) {9};
+	\path (1) edge[red] node {2} (2)
+	      (2) edge[red,bend right] node {2} (4)
+	          edge node {7} (9)
+	      (3) edge[red,bend left] node {2} (4)
+	          edge[red] node {2} (7)
+	      (4) edge node {4} (5)
+	          edge node {4} (6)
+	      (5) edge node {1} (9)
+	      (6) edge node {2} (8)
+	      (7) edge node {4} (8)
+	;
+\end{tikzpicture}
+}
+\newpage
+
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[red,state] (2) at (-2,2) {2};
+	\node[red,state] (3) at (2,2) {3};
+	\node[red,state] (4) at (0,-2.5) {4};
+	\node[red,state] (5) at (-4,-4) {5};
+	\node[state] (6) at (4,-4) {6};
+	\node[red,state] (7) at (5,2.5) {7};
+	\node[state] (8) at (8,3) {8};
+	\node[state] (9) at (-7,3) {9};
+	\path (1) edge[red] node {2} (2)
+	      (2) edge[red,bend right] node {2} (4)
+	          edge node {7} (9)
+	      (3) edge[red,bend left] node {2} (4)
+	          edge[red] node {2} (7)
+	      (4) edge[red] node {4} (5)
+	          edge node {4} (6)
+	      (5) edge node {1} (9)
+	      (6) edge node {2} (8)
+	      (7) edge node {4} (8)
+	;
+\end{tikzpicture}
+}
+\vskip 2cm
+
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[red,state] (2) at (-2,2) {2};
+	\node[red,state] (3) at (2,2) {3};
+	\node[red,state] (4) at (0,-2.5) {4};
+	\node[red,state] (5) at (-4,-4) {5};
+	\node[state] (6) at (4,-4) {6};
+	\node[red,state] (7) at (5,2.5) {7};
+	\node[state] (8) at (8,3) {8};
+	\node[red,state] (9) at (-7,3) {9};
+	\path (1) edge[red] node {2} (2)
+	      (2) edge[red,bend right] node {2} (4)
+	      (3) edge[red,bend left] node {2} (4)
+	          edge[red] node {2} (7)
+	      (4) edge[red] node {4} (5)
+	          edge node {4} (6)
+	      (5) edge[red] node {1} (9)
+	      (6) edge node {2} (8)
+	      (7) edge node {4} (8)
+	;
+\end{tikzpicture}
+}
+\newpage
+
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[red,state] (2) at (-2,2) {2};
+	\node[red,state] (3) at (2,2) {3};
+	\node[red,state] (4) at (0,-2.5) {4};
+	\node[red,state] (5) at (-4,-4) {5};
+	\node[red,state] (6) at (4,-4) {6};
+	\node[red,state] (7) at (5,2.5) {7};
+	\node[state] (8) at (8,3) {8};
+	\node[red,state] (9) at (-7,3) {9};
+	\path (1) edge[red] node {2} (2)
+	      (2) edge[red,bend right] node {2} (4)
+	      (3) edge[red,bend left] node {2} (4)
+	          edge[red] node {2} (7)
+	      (4) edge[red] node {4} (5)
+	          edge[red] node {4} (6)
+	      (5) edge[red] node {1} (9)
+	      (6) edge node {2} (8)
+	      (7) edge node {4} (8)
+	;
+\end{tikzpicture}
+}
+\vskip 2cm
+
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[red,state] (1) at (0,0) {1};
+	\node[red,state] (2) at (-2,2) {2};
+	\node[red,state] (3) at (2,2) {3};
+	\node[red,state] (4) at (0,-2.5) {4};
+	\node[red,state] (5) at (-4,-4) {5};
+	\node[red,state] (6) at (4,-4) {6};
+	\node[red,state] (7) at (5,2.5) {7};
+	\node[red,state] (8) at (8,3) {8};
+	\node[red,state] (9) at (-7,3) {9};
+	\path (1) edge[red] node {2} (2)
+	      (2) edge[red,bend right] node {2} (4)
+	      (3) edge[red,bend left] node {2} (4)
+	          edge[red] node {2} (7)
+	      (4) edge[red] node {4} (5)
+	          edge[red] node {4} (6)
+	      (5) edge[red] node {1} (9)
+	      (6) edge[red] node {2} (8)
+	;
+\end{tikzpicture}
+}
+\newpage
+
+\section{Exercice 2}
+\subsection{Chaîne eulérienne}
+\bigskip
+Il existe une chaîne eulérienne dans ce graphe car celui-ci est connexe et il comporte au moins deux sommets qui ont un degré impair (les sommets 4 et 8).
+Une chaîne eulérienne dans ce graphe est (à partir du sommet 8 vers 10) : 
+\newline
+$ 8\to 10 \to 9 \to 8 \to 7 \to 9 \to 6 \to 8 \to 5 \to 6 \to 3 \to 5 \to 1 \to 3 \to 4 \to 1 \to 2 \to 4 \to 6 \to 7 \to 4$
+\bigskip
+\newline
+\centerline{
+\begin{tikzpicture}[auto, ->]
+	\node[state] (1) at (-4,1)  {1};
+	\node[state] (2) at (-4,-1) {2};
+	\node[state] (3) at (-2,1)  {3};
+	\node[state] (4) at (-2,-1) {4};
+	\node[state] (5) at (0,2)   {5};
+	\node[state] (6) at (0,0)   {6};
+	\node[state] (7) at (0,-2)  {7};
+	\node[state] (8) at (2,1)   {8};
+	\node[state] (9) at (2,-1)  {9};
+	\node[state] (10)at (4,0)   {10};
+	\path   (1) edge            node {} (2)
+	            edge            node {} (3)
+	        (2) edge            node {} (4)
+	        (3) edge            node {} (4)
+	            edge            node {} (5)
+	        (4) edge            node {} (1)
+	            edge            node {} (6)
+	        (5) edge            node {} (6)
+	            edge[bend right]node {} (1)
+	        (6) edge            node {} (8)
+	            edge            node {} (3)
+	            edge            node {} (7)
+	        (7) edge            node {} (9)
+	            edge            node {} (4)
+	        (8) edge            node {} (10)
+	            edge            node {} (7)
+	            edge            node {} (5)
+	        (9) edge            node {} (8)
+	            edge            node {} (6)
+	        (10)edge            node {} (9)
+	;  
+\end{tikzpicture}
+}
+\bigskip
+
+\subsection{Coloration du graphe (algorithme de Welsh-Powell)}
+\bigskip
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+    Sommets     & 6 & 4 & 8 & 1 & 3 & 5 & 7 & 9 & 2 & 10 \\
+\hline
+    Degrés      & 6 & 5 & 5 & 4 & 4 & 4 & 4 & 4 & 2 & 2  \\
+\hline
+    Couleur 1 & c1 & $\times$ & $\times$ & c1 & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & c1  \\
+\hline
+    Couleur 2 & c1 & c2 & $\times$ & c1 & $\times$ & c2 & $\times$ & c2 & $\times$ & c1 \\
+\hline
+    Couleur 3 & c1 & c2 & c3 & c1 & c3 & c2 & $\times$ & c2 & c3 & c1 \\
+\hline
+    Couleur 4 & c1 & c2 & c3 & c1 & c3 & c2 & c4 & c2 & c3 & c1 \\
+\hline
+\end{tabular}
+\bigskip
+\newpage
+On obtient alors le graphe coloré suivant :
+\bigskip
+\newline
+\bigskip
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[state, red]   (1) at (-4,1)  {1};
+	\node[state, green] (2) at (-4,-1) {2};
+	\node[state, green] (3) at (-2,1)  {3};
+	\node[state, blue]  (4) at (-2,-1) {4};
+	\node[state, blue]  (5) at (0,2)   {5};
+	\node[state, red]   (6) at (0,0)   {6};
+	\node[state, orange](7) at (0,-2)  {7};
+	\node[state, green] (8) at (2,1)   {8};
+	\node[state, blue]  (9) at (2,-1)  {9};
+	\node[state, red]   (10)at (4,0)   {10};
+	\path   (1) edge            node {} (2)
+	            edge            node {} (3)
+	            edge            node {} (4)
+	            edge[bend left] node {} (5)
+	        (2) edge            node {} (4)
+	        (3) edge            node {} (4)
+	            edge            node {} (5)
+	            edge            node {} (6)
+	        (4) edge            node {} (6)
+	            edge            node {} (7)
+	        (5) edge            node {} (6)
+	            edge            node {} (8)
+	        (6) edge            node {} (7)
+	            edge            node {} (8)
+	            edge            node {} (9)
+	        (7) edge            node {} (8)
+	            edge            node {} (9)
+	        (8) edge            node {} (9)
+	            edge            node {} (10)
+	        (9) edge            node {} (10)
+	;  
+\end{tikzpicture}
+}
+\vskip 2 cm
+
+\subsection{Nombre chromatique}
+\bigskip
+\centerline{
+\begin{tikzpicture}[auto]
+	\node[state, red]   (6) at (0,0)   {6};
+	\node[state, orange](7) at (0,-2)  {7};
+	\node[state, green] (8) at (2,1)   {8};
+	\node[state, blue]  (9) at (2,-1)  {9};
+	\path   (6) edge            node {} (7)
+	            edge            node {} (8)
+	            edge            node {} (9)
+	        (7) edge            node {} (8)
+	            edge            node {} (9)
+	        (8) edge            node {} (9)
+	;  
+\end{tikzpicture}
+}
+\vskip 2cm
+On observe que ce sous-graphe contient 4 couleurs, ainsi, il est impossible que le graphe complet comporte moins de 4 couleurs. 4 est donc le nombre chromatique de ce graphe.
+
+\end{document}
